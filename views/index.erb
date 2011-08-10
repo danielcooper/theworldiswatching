@@ -1,0 +1,37 @@
+<script>
+$(document).ready(function(){
+  last = <%=@tweets.last['time'].to_i%>;
+  first = <%=@tweets.first['time'].to_i%>;
+  $('#earlier').click(function() {
+    $.get('/before/'+last, function(data) {
+      if(data != 'none'){
+        $('#tweets').html(data);
+      }
+    });
+  });
+  $('#later').click(function() {
+    $.get('/after/'+first, function(data) {
+      if(data != 'none'){
+        $('#tweets').html(data);
+      }
+    });
+  });
+});
+</script>
+<div id="tweets">
+<% @tweets.each do |n| %>
+  <div class="tweet">
+    <span class="tweet_text">
+      <%= n['tweet_text'] %>
+      <div class="by_and_about">
+        <a href="http://twitter.com/<%= n['tweet_username']%>">@<%= n['tweet_username'] %></a> about <a href="<%= n['show_url']%>"><%= n['show_title']%></a>
+      </div>
+    </span>
+  </div>
+<% end %>
+</div>
+
+<div id="controls">
+  <span id="later">Later</span>
+  <span id="earlier">Earlier</span>
+</div>

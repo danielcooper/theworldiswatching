@@ -1,0 +1,12 @@
+<script>last = <%=@tweets.last['time'].to_i%>;</script>
+<script>first = <%=@tweets.first['time'].to_i%>;</script>
+<%@tweets.each do |n| %>
+  <div class="tweet">
+    <span class="tweet_text">
+      <%= n['tweet_text'] %>
+      <div class="by_and_about">
+        <a href="http://twitter.com/<%= n['tweet_username']%>">@<%= n['tweet_username'] %></a> about <a href="<%= n['show_url']%>"><%= n['show_title']%></a>
+      </div>
+    </span>
+  </div>
+<%end%>

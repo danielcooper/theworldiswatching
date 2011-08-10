@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'TeleTekst';
+  src: url('TeleTekst.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  
+}
+
+body{
+  font: 20px 'TeleTekst', Courier, serif;
+  background-color: black;
+  color: white;
+  line-height:20px;
+  letter-spacing: 3px
+}
+
+h1 {
+  font-size: 30px;
+  margin-left: 100px;
+  position: absolute;
+}
+
+a{
+  color: #ffff00;
+}
+
+#container {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#controls {
+  margin-left: 700px;
+  position: absolute;
+  top: 555px;
+}
+
+#tv {
+  background: url("../background.png") no-repeat scroll center top transparent;
+  height: 460px;#about{
+  position:absolute;
+}
+  min-height: 400px;
+  padding-right: 20px;
+  padding-top: 140px;
+}
+
+#controls span {
+  cursor: pointer;
+  display: block;
+  font-size: 13px;
+  line-height: 80%;
+  margin-top: 10px;
+  text-align: right;
+  text-decoration: underline;
+}
+
+#about {
+  font-size: 15px;
+  position: absolute;
+  top: 550px;
+  margin-left:50px;
+}
+
+.tweet {
+  margin-left: 40px;
+  margin-top: 30px;
+  text-align: right;
+}
