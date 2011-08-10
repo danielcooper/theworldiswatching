@@ -27,6 +27,8 @@ def listen_to_twitter
     puts status.text
     found_show = on_tv.select{|s| status.text.downcase.include?(s.first)}
     unless found_show.empty?
+      db = Mongo::Connection.new.db("watch")
+      coll = db.collection("tweets")
       atlas_show =  Ratlas::Content.find(:all).where(:uri => found_show.first[1]).to_a.first
       saved_resource = {
         :tweet_text => status.text, :tweet_username => status[:user][:screen_name], :tweet_display_picture => status[:user][:profile_image_url],
@@ -38,10 +40,6 @@ def listen_to_twitter
     end
   end
 end
-
-
-
-
 
 
 client_thread = Thread.new do
