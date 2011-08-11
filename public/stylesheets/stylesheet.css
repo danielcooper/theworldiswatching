@@ -39,12 +39,10 @@ a{
 
 #tv {
   background: url("../background.png") no-repeat scroll center top transparent;
-  height: 460px;#about{
-  position:absolute;
-}
+  height: 480px;
   min-height: 400px;
   padding-right: 20px;
-  padding-top: 140px;
+  padding-top: 120px;
 }
 
 #controls span {
